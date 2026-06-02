@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    color: darkblue;
+    font-family: Arial, sans-serif;
+    border-bottom: 2px solid navy;
+    padding-bottom: 10px;
+}
+
+.content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 600px;
+}
+h2{
+    color: green;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-border: 1px solid black;
+}
+#mainsection{
+    background-color: lightgray;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.eventCard{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+h3 , p {
+    text-color: darkred;
+    text-font: 'Courier New', monospace;
+}

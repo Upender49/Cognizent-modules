@@ -1,0 +1,31 @@
+.div1 {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    height: 100px;
+    margin-top: 400px;
+}
+.div2 {
+    background-color: rgb(240, 0, 24);
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 20px;
+    height: 100px;
+    margin-top: 500px;
+}
+body{
+      background-color: #f0f0f0;
+    background-image: url('./image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: red;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}

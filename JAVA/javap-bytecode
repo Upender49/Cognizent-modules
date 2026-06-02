@@ -1,0 +1,11 @@
+# Compile first
+javac HelloWorld.java
+
+# View bytecode
+javap -c HelloWorld
+
+# View private methods too
+javap -c -p HelloWorld
+
+# View verbose info (constant pool, etc.)
+javap -v HelloWorld

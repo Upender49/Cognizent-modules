@@ -1,0 +1,209 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+#welcomeBanner h1 {
+    margin-bottom: 10px;
+}
+
+/* Highlight Class */
+.highlight {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.highlight:hover {
+    color: green;
+}
+
+/* Sections */
+section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Table & Image Gallery */
+table {
+    width: 100%;
+    border-collapse : collapse;
+    margin-top: 15px;
+}
+
+.table-caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+.event-img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.event-img:hover {
+    transform: scale(1.05);
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: fit-content;
+}
+
+button[type="button"] {
+    background-color: #dc3545;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+output {
+    font-weight: bold;
+    color: #155724;
+}
+
+#feeDisplay {
+    color: #004085;
+    background: #cce5ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+#phoneResult {
+    color: #721c24;
+}
+
+#charCount {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Video Section */
+video {
+    display: block;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Location Section */
+#locationSection button {
+    background-color: #007bff;
+    margin-bottom: 10px;
+}
+
+#locationOutput {
+    font-family: monospace;
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
