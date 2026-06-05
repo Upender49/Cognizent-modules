@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--   NAVIGATION   -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="help.html" target="_blank">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--   MAIN CONTENT   -->
+    <main>
+
+        <!-- Welcome Banner -->
+        <div id="welcomeBanner">
+            <h1>Welcome to the Community Event Portal</h1>
+            <p>
+                This is your local hub for upcoming events. 
+                <span style="color: red; font-weight: bold;">Special Offer: Free entry for first 50 registrations!</span>
+            </p>
+        </div>
+
+        <h2 class="highlight">Stay Connected with Local Events</h2>
+
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to the city's official community event portal. Browse events, register online, and stay updated.</p>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Events</h2>
+            <p>Check out our upcoming community gatherings, workshops, and city council meetings.</p>
+
+            <!-- Image Gallery for Community Events -->
+            <table>
+                <caption class="table-caption">Past Community Events Gallery</caption>
+                <thead>
+                    <tr>
+                        <th>Spring Festival</th>
+                        <th>Charity Run</th>
+                        <th>Food Fair</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="eventCard" id="img1" ondblclick="enlarge(id)" src="./image.png" alt="Spring Festival" title="Spring Festival 2024">
+                            <div class="caption">Spring Festival 2024</div>
+                        </td>
+                        <td>
+                            <img class="eventCard" id="img2" ondblclick="enlarge(id)" src="./image.png" alt="Charity Run" title="Charity Run 2024">
+                            <div class="caption">Charity Run 2024</div>
+                        </td>
+                        <td>
+                            <img class="eventCard" id="img3" ondblclick="enlarge(id)" src="./image.png" alt="Food Fair" title="Food Fair 2024">
+                            <div class="caption">Food Fair 2024</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="eventCard" id="img4" ondblclick="enlarge(id)" src="./image.png" alt="Music Night" title="Music Night 2024">
+                            <div class="caption">Music Night 2024</div>
+                        </td>
+                        <td>
+                            <img class="eventCard" id="img5" ondblclick="enlarge(id)" src="./image.png" alt="Art Expo" title="Art Expo 2024">
+                            <div class="caption">Art Expo 2024</div>
+                        </td>
+                        <td>
+                            <img class="eventCard" id="img6" ondblclick="enlarge(id)" src="./image.png" alt="Health Camp" title="Health Camp 2024">
+                            <div class="caption">Health Camp 2024</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Event Registration Form -->
+        <section id="registration">
+            <h2>Event Registration</h2>
+            <form id="regForm" onsubmit="showmsgs(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" autofocus required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="eventtype">Event Type:</label>
+                <select id="eventtype" required onchange="saveit(); showFee();">
+                    <option value="">Select an event</option>
+                    <option value="workshop" data-fee="Free">Workshop</option>
+                    <option value="seminar" data-fee="$10">Seminar</option>
+                    <option value="conference" data-fee="$25">Conference</option>
+                </select>
+                <output id="feeDisplay"></output>
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" placeholder="Enter any special requirements here" required></textarea>
+
+                <button type="submit" onclick="addtolist()">Submit</button>
+                <button type="button" onclick="clearsaved() ">Clear Preferences</button>
+                <output id="result"></output>
+            </form>
+        </section>
+        <!-- tables -->
+        <section>
+            <table id="eventsTable">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Seats</th>
+                        <th>Category</th>
+                        <th>Fee</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!--  TASK 8: BOX MODEL & LAYOUT  -->
+        <section id="boxModelDemo">
+            <h2>Upcoming Event Cards</h2>
+            <div class="eventCard-container">
+                <div class="eventCard">
+                    <h3>City Marathon</h3>
+                    <p>Join us for the annual city marathon through downtown streets. Early bird registration ends soon.</p>
+                </div>
+                <div class="eventCard">
+                    <h3>Summer Concert Series</h3>
+                    <p>Enjoy live music at the central park amphitheater every Friday evening.</p>
+                </div>
+            </div>
+
+            <h3>Visibility vs Display Demo</h3>
+            <div class="box-demo">Normal visible box</div>
+            <div class="visibility-hidden">This element uses <strong>visibility: hidden</strong> (space is reserved)</div>
+            <div class="display-none">This element uses <strong>display: none</strong> (no space reserved)</div>
+            <p>Notice the empty gap above for the hidden element, but no gap at all for the display:none element.</p>
+        </section>
+
+
+        <!--  TASK 9: MULTIPLE COLUMNS  -->
+        <section id="newsBulletin">
+            <h2>Community Bulletin</h2>
+            <article class="news-article">
+                <h3>City Updates & Summer Programs</h3>
+                <p>The city council is pleased to announce the grand opening of Riverside Park this Saturday morning. The park features over five miles of walking trails, a state-of-the-art playground, and covered picnic areas. Residents are invited to attend the ribbon-cutting ceremony at 10 AM near the main entrance. Local food trucks and community vendors will be available throughout the day.</p>
+                <p>This project has been in development for over two years and represents a significant investment in community green spaces. We hope to see you there! Additionally, the summer recreation program schedule has been officially released. Registration opens next Monday for swimming lessons, tennis camps, and youth soccer leagues. Early registration is strongly recommended as spots fill quickly. Need-based scholarships are available for qualifying families.</p>
+                <p>This project has been in development for over two years and represents a significant investment in community green spaces. We hope to see you there! Additionally, the summer recreation program schedule has been officially released. Registration opens next Monday for swimming lessons, tennis camps, and youth soccer leagues. Early registration is strongly recommended as spots fill quickly. Need-based scholarships are available for qualifying families.</p>
+            </article>
+        </section>
+
+
+        <!-- Event Feedback with Event Handling -->
+        <section id="feedbackSection">
+            <h2>Event Feedback</h2>
+
+            <label for="phonenumber">Phone Number:</label>
+            <input type="tel" id="phonenumber" onblur="validate()" placeholder="Enter your 10-digit phone number" pattern="[0-9]{10}" required>
+            <output id="phoneResult"></output>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" rows="4" placeholder="Share your thoughts..." onkeyup="countChars()"></textarea>
+            <p id="charCount">Characters: 0</p>
+
+            <h3>Double-click the image to enlarge</h3>
+            <img width="200px" src="./image.png" id="eventImg" ondblclick="enlargeImage()" alt="Event Image">
+        </section>
+
+        <!-- Video Invite with Media Events -->
+        <section id="videoSection">
+            <h2>Event Promo Video</h2>
+            <video width="320" height="240" controls oncanplay="videoReady()">
+                <source src="./video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <output id="videoResult"></output>
+        </section>
+
+        <!-- Geolocation for Event Mapping -->
+        <section id="locationSection">
+            <h2>Find Nearby Events</h2>
+            <button onclick="findNearbyEvents()">Find Nearby Events</button>
+            <p id="locationOutput">Click the button to locate the nearest event.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email us at <strong>umeshvang@domain.com</strong> or call <strong>995-165-1475</strong>.</p>
+        </section>
+
+    </main>
+
+    <!--   FOOTER   -->
+    <footer>
+        <p>&copy;  All rights reserved by Vanga Upender CVR College of Engineering.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
+</body>
+</html>
